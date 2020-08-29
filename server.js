@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const db = require("./app/models");
 db.sequelize.sync();
 
-app.use("/api/tutorials", routes);
+app.use("/api/notes", routes);
 
 const PORT = process.env.PORT || 8080;
 

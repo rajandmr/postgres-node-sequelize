@@ -62,7 +62,7 @@ exports.update = (req, res) => {
   }).then((data) => {
     if (data) {
       res.send({
-        message: "Tutorial was updated successfully",
+        message: "Note was updated successfully",
       });
     } else {
       res.send({
