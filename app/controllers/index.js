@@ -43,7 +43,7 @@ exports.findAll = (req, res) => {
 exports.findAllAnother = async (req, res) => {
   const { title } = req.query;
   try {
-    let data = await Notes.findAll();
+    const data = await Notes.findAll();
     res.send(data);
   } catch (error) {
     res.status(500).send({
