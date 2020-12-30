@@ -1,13 +1,13 @@
-const express = require("express");
-const bodyParser = require("body-parser");
-const cors = require("cors");
+const express = require('express');
+const bodyParser = require('body-parser');
+const cors = require('cors');
 
 const app = express();
 
-const routes = require("./app/routes");
+const routes = require('./app/routes');
 
-var corsOptions = {
-  origin: "http://localhost:8081",
+const corsOptions = {
+  origin: 'http://localhost:8081',
 };
 
 app.use(cors(corsOptions));
@@ -16,10 +16,10 @@ app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const db = require("./app/models");
+const db = require('./app/models');
 db.sequelize.sync();
 
-app.use("/api/notes", routes);
+app.use('/api/notes', routes);
 
 const PORT = process.env.PORT || 8080;
 
