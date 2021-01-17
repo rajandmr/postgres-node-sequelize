@@ -27,8 +27,6 @@ exports.create = (req, res) => {
 };
 
 exports.findAll = (req, res) => {
-  const { title } = req.query;
-
   Notes.findAll()
     .then((data) => {
       res.send(data);
@@ -41,7 +39,6 @@ exports.findAll = (req, res) => {
 };
 
 exports.findAllAnother = async (req, res) => {
-  const { title } = req.query;
   try {
     const data = await Notes.findAll();
     res.send(data);
